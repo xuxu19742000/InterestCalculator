@@ -1,0 +1,10 @@
+C:\Users\xuxu1\Documents\CreditCardInterestCalculator\InterestCalculator\InterestCalculator.CreditCard.Base\bin\Debug\InterestCalculator.CreditCard.Base.dll
+C:\Users\xuxu1\Documents\CreditCardInterestCalculator\InterestCalculator\InterestCalculator.CreditCard.Base\bin\Debug\InterestCalculator.CreditCard.Base.pdb
+C:\Users\xuxu1\Documents\CreditCardInterestCalculator\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.csprojResolveAssemblyReference.cache
+C:\Users\xuxu1\Documents\CreditCardInterestCalculator\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.dll
+C:\Users\xuxu1\Documents\CreditCardInterestCalculator\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.pdb
+C:\Users\xuxu1\Desktop\InterestCalculator\InterestCalculator.CreditCard.Base\bin\Debug\InterestCalculator.CreditCard.Base.dll
+C:\Users\xuxu1\Desktop\InterestCalculator\InterestCalculator.CreditCard.Base\bin\Debug\InterestCalculator.CreditCard.Base.pdb
+C:\Users\xuxu1\Desktop\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.csprojResolveAssemblyReference.cache
+C:\Users\xuxu1\Desktop\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.dll
+C:\Users\xuxu1\Desktop\InterestCalculator\InterestCalculator.CreditCard.Base\obj\Debug\InterestCalculator.CreditCard.Base.pdb

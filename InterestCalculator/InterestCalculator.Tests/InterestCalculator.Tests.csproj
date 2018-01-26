@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4AC98B8-6642-42C0-83CA-38945C31F9A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterestCalculator.Tests</RootNamespace>
+    <AssemblyName>InterestCalculator.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>67f762a3</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreditCardInterestCalculatorTest.cs" />
+    <Compile Include="PersonInterestCalculatorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WalletInterestCalculatorTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InterestCalculator.Abstract\InterestCalculator.Wallet.Base.csproj">
+      <Project>{1cb061c3-a548-45b5-8d29-71f730edf000}</Project>
+      <Name>InterestCalculator.Wallet.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.CreditCard.Base\InterestCalculator.CreditCard.Base.csproj">
+      <Project>{fa3ae87e-4ce8-48ec-84f7-82763e98e141}</Project>
+      <Name>InterestCalculator.CreditCard.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.CreditCard\InterestCalculator.CreditCard.csproj">
+      <Project>{b0c70a98-7db5-4819-b999-0ce4750de602}</Project>
+      <Name>InterestCalculator.CreditCard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Data\InterestCalculator.Person.Base.csproj">
+      <Project>{246fcd90-4ffd-4641-9984-b4d5d8f272f2}</Project>
+      <Name>InterestCalculator.Person.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Wallet\InterestCalculator.Wallet.csproj">
+      <Project>{bfc1ed91-874f-4c30-8622-809033eae5c3}</Project>
+      <Name>InterestCalculator.Wallet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator\InterestCalculator.csproj">
+      <Project>{75bbec76-4a72-4632-8d9f-b539b86050cc}</Project>
+      <Name>InterestCalculator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestProviderFactory\InterestCalculator.RateFactory.csproj">
+      <Project>{fe8b6b55-20a7-4e15-9ff7-df0a74b39838}</Project>
+      <Name>InterestCalculator.RateFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestRateInterfaces\InterestCalculator.RateFactory.Base.csproj">
+      <Project>{6d3b790f-7872-450b-ba4c-fcef807ad3d7}</Project>
+      <Name>InterestCalculator.RateFactory.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonInterestCalculator\InterestCalculator.Person.csproj">
+      <Project>{36052030-6a14-4095-b6fe-d83319937bcc}</Project>
+      <Name>InterestCalculator.Person</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

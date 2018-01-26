@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75BBEC76-4A72-4632-8D9F-B539B86050CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterestCalculator</RootNamespace>
+    <AssemblyName>InterestCalculator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>b2c723c3</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InterestCalculator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InterestCalculator.Abstract\InterestCalculator.Wallet.Base.csproj">
+      <Project>{1cb061c3-a548-45b5-8d29-71f730edf000}</Project>
+      <Name>InterestCalculator.Wallet.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.CreditCard.Base\InterestCalculator.CreditCard.Base.csproj">
+      <Project>{fa3ae87e-4ce8-48ec-84f7-82763e98e141}</Project>
+      <Name>InterestCalculator.CreditCard.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.CreditCard.Factory\InterestCalculator.CreditCard.Factory.csproj">
+      <Project>{bf6f4631-e5e7-4a34-8586-8bae72957fbb}</Project>
+      <Name>InterestCalculator.CreditCard.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.CreditCard\InterestCalculator.CreditCard.csproj">
+      <Project>{b0c70a98-7db5-4819-b999-0ce4750de602}</Project>
+      <Name>InterestCalculator.CreditCard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Data\InterestCalculator.Person.Base.csproj">
+      <Project>{246fcd90-4ffd-4641-9984-b4d5d8f272f2}</Project>
+      <Name>InterestCalculator.Person.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Person.Factory\InterestCalculator.Person.Factory.csproj">
+      <Project>{6bf68b54-b12e-451c-9202-9aea02c0fab2}</Project>
+      <Name>InterestCalculator.Person.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Wallet.Factory\InterestCalculator.Wallet.Factory.csproj">
+      <Project>{b95d941a-55ea-45a1-9289-c56228cc635e}</Project>
+      <Name>InterestCalculator.Wallet.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterestCalculator.Wallet\InterestCalculator.Wallet.csproj">
+      <Project>{bfc1ed91-874f-4c30-8622-809033eae5c3}</Project>
+      <Name>InterestCalculator.Wallet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonInterestCalculator\InterestCalculator.Person.csproj">
+      <Project>{36052030-6a14-4095-b6fe-d83319937bcc}</Project>
+      <Name>InterestCalculator.Person</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
